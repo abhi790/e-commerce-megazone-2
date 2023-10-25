@@ -1,0 +1,14 @@
+.search-container {
+    /* border: 1px solid green; */
+    padding: 1rem 0;
+}
+.input-box {
+    padding: 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid #c7c7c7;
+    display: block;
+    margin: 1rem auto;
+    font-size: 2rem;
+    color: #5d5d5d;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.1);
+}

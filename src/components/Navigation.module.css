@@ -1,0 +1,33 @@
+.nav {
+    position:sticky;
+    top:0px;
+    z-index: 1;
+    border: 2px solid grey;
+    border-radius: 2rem;
+    background-color: azure;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav-button {
+    font-size: 3rem;
+    color : #565656;
+    padding : 1rem 3rem ;
+    background-color: #ffffff;
+}
+
+.cart{
+    position: relative;
+}
+
+.indicator {
+    border: 1px solid green;
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    background-color: green;
+    color: white;
+    padding: 1rem;
+}

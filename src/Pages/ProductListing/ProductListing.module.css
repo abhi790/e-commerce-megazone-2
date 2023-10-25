@@ -1,0 +1,18 @@
+.card-container {
+    /* width: 100vw; */
+    /* height: 100vh; */
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.message {
+    display: block;
+    font-size: 2rem;
+    color: #626262;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem 2rem;
+}

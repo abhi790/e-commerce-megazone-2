@@ -1,0 +1,19 @@
+.sortby-container {
+    /* border: 1px solid green; */
+    padding: 1rem;
+}
+
+.select-box {
+    border: 1px solid #424242;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.option-item {
+    font-size: 1rem;
+}

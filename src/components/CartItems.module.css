@@ -1,0 +1,21 @@
+.savelater-container {
+    border: 1px solid #525252;
+    border-radius: 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.nothing {
+    /* border: 1px solid red; */
+    font-size: 2rem;
+    font-weight: 600;
+    color: #252525;
+    text-align: center;
+    display: block;
+    margin: 2rem auto;
+    text-transform: uppercase;
+
+}

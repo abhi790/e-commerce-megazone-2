@@ -1,0 +1,96 @@
+.card {
+    border: 1px solid rgb(152, 152, 152);
+    border-radius: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 350px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.3);
+    transition: all .2s ease;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,.5);
+    transform: translate(-2px, -4px);
+
+}
+
+
+
+.card_name{ 
+    font-size: 2rem;
+    color: #626262;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+
+}
+
+.card_s_des{
+    font-size: 2rem;
+    color: #a07474;
+    display: inline-block;
+    margin: .5rem 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+.card_l_des{
+    font-size: 1rem;
+    color: #505050;
+    line-height: 1.6;
+    display: inline-block;
+    margin: .5rem 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.curr_price {
+    font-size: 2rem;
+    color: rgb(0, 177, 0);
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.prev_price {
+    font-size: 2rem;
+    color:rgb(192, 0, 0);
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button-container {
+    /* border: 1px solid green; */
+    padding: 1rem 0;
+
+}
+
+.button {
+    padding: 1rem;
+    border: 1px solid #b6b6b6;
+    margin: 0 .5rem;
+    color: #303030;
+    border-radius: 2rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.button:hover {
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+}
+
+.button:active{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0);
+}
+
+.content {
+    /* border: 1px solid red; */
+    margin: 1rem 0;
+    padding: .5rem;
+}
