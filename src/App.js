@@ -6,6 +6,7 @@ import { products } from "./Data/products";
 import {  Routes, Route, Link } from "react-router-dom";
 import Cart from './Pages/Cart/Cart';
 import styles from './components/Button.module.css';
+import HomePage from "./components/HomePage";
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [wishList, setWishList] = useState([]);
@@ -61,12 +62,13 @@ function App() {
     <>
       <Navigation cartItems={cartItems}/>
       <Routes>
-        <Route path="/" element={
+        <Route path="/e-commerce-megazone-2/" element={<HomePage />} />
+        <Route path="/e-commerce-megazone-2/products-page" element={
           <productContext.Provider value={{products, cartItems,setCartItems, isProductPresent, showAddToCart,showGoToCart,sortList, dynamicSort}}>
             <ProductListing />
           </productContext.Provider>
         } />
-        <Route path="/cart" element={
+        <Route path="/e-commerce-megazone-2/cart" element={
           <cartContext.Provider value={{cartItems, setCartItems,wishList, setWishList, sortList}}>
             <Cart />
           </cartContext.Provider>
