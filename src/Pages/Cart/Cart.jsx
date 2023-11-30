@@ -34,7 +34,7 @@ const Cart = () => {
 
 const nothingFound = () => {
     return (
-        <span className={styles.nothing}>Empty Save for Later</span>
+        <span className={styles.nothing}>Cart Is Empty</span>
     )
 }
 
@@ -42,7 +42,20 @@ const nothingFound = () => {
     setSortby(e.target.value);
     setCartItems(sortList(cartItems,e.target.value));
   }
-
+  const handleCheckout = () => {
+    if(cartItems.length !== 0){
+      if(window.confirm(`Are you sure want to checkout?`)){
+        setCartItems([]);
+      }
+    }
+  }
+  const calculatePrice = () => {
+    let total = 0;
+    cartItems.map(product => {
+      total += product.price;
+    })
+    return total;
+  }
   return (
     < >
       <h1 style={styleC}>Cart ({cartItems.length})</h1>
@@ -52,7 +65,12 @@ const nothingFound = () => {
       <SortBy handleSortChange={handleSortChange}/>
 
       {cartItems.length != 0 ? showList() : nothingFound()}
-          <hr className={stylesC["hr-line"]}/>
+      <div className={stylesC["subtotal-container"]}>
+      <p className={stylesC["subtotal"]}>Sub Total : <span >&#x20B9; {calculatePrice()} </span> </p>
+          <button className={stylesC["checkout"]} onClick={handleCheckout}>Checkout</button>
+      </div>
+
+      <hr className={stylesC["hr-line"]}/>
       <SaveLater />
     </>
   )

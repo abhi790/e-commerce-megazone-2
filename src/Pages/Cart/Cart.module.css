@@ -27,3 +27,33 @@
     margin: 2rem auto;
     text-align: center;
 }
+
+.subtotal-container button{
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    /* display: block; */
+    font-size: 2rem;
+    margin: 0 auto;
+    background-color: rgb(197, 197, 197);
+    color: rgb(0, 162, 41);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.subtotal-container button:active{
+    transform: scale(.99);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    color: white;
+}
+
+.subtotal {
+    font-size: 2rem;
+    color: #626262;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.subtotal span{
+    color: rgb(0, 154, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

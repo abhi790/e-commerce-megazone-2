@@ -4,20 +4,27 @@ import stylesC from './Card.module.css';
 import { cartContext } from '../context/productContext';
 
 const SaveLaterItem = ({item}) => {
-    const {wishList, setWishList, cartItems, setCartItems} = useContext(cartContext);
+    const {wishList, setWishList, cartItems, setCartItems,showToast} = useContext(cartContext);
 
     const handleDelete = () => {
         if(window.confirm(`Are you sure you want to delete item from wishlist`)){
             const remainingItems = wishList.filter(prod => prod.id !== item.id);
-            setWishList(remainingItems);
+            setTimeout(() => {
+              setWishList(remainingItems);
+              showToast(`❌ ${item.name} -- deleted`,'red');
+            }, 200);
+
         }
     }
 
     const handleMoveToCart = () => {
         setCartItems([...cartItems, item]);
         const remainingItems = wishList.filter(prod => prod.id !== item.id);
-        setWishList(remainingItems);
-        alert(`Selected item moved to cart`);
+        setTimeout(() => {
+          setWishList(remainingItems);
+          showToast(`✅ ${item.name} -- moved to cart`,'green');
+        }, 200);
+
     }
 
   return (

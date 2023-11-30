@@ -7,6 +7,9 @@ import {  Routes, Route, Link } from "react-router-dom";
 import Cart from './Pages/Cart/Cart';
 import styles from './components/Button.module.css';
 import HomePage from "./components/HomePage";
+import {ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [wishList, setWishList] = useState([]);
@@ -16,7 +19,7 @@ function App() {
 
   const showGoToCart = () => {
     return (
-      <Link to={`/cart`}>
+      <Link to={`/e-commerce-megazone-2/cart`}>
         <button className={`${styles.button} ${styles['goToCart']}`}>Go to Cart</button>
       </Link>
     )
@@ -57,25 +60,51 @@ function App() {
 
       return _filteredProduct.sort(dynamicSort(property));
   }
+  const showToast = (message,color,duration) => {
+    const toastBox = document.getElementById('toastBox');
+   
+    let toast = document.createElement('div');
+    // console.log(`${message} is clicked`);
+
+    toast.classList.add('toast');
+    switch(color){
+      case 'green' : toast.classList.add('greenBox');
+        break;
+      case 'red' : toast.classList.add('redBox');
+        break;
+      default : toast.classList.add('orangeBox');
+        break;
+    }
+    toast.innerHTML = `${message}`;
+    toastBox.classList.add('toastContainer');
+    toastBox.appendChild(toast);
+    setTimeout(()=> {
+      toast.remove();
+    }, duration ? duration : 3000);
+    console.log(`ToastBox`, toastBox);
+  }
 
   return (
     <>
+      <div id="toastBox" ></div>
       <Navigation cartItems={cartItems}/>
+      {/* To show toast message to user*/}
       <Routes>
         <Route path="/e-commerce-megazone-2/" element={<HomePage />} />
         <Route path="/e-commerce-megazone-2/products-page" element={
-          <productContext.Provider value={{products, cartItems,setCartItems, isProductPresent, showAddToCart,showGoToCart,sortList, dynamicSort}}>
+          <productContext.Provider value={{products, cartItems,setCartItems, isProductPresent, showAddToCart,showGoToCart,sortList, dynamicSort, showToast}}>
             <ProductListing />
           </productContext.Provider>
         } />
         <Route path="/e-commerce-megazone-2/cart" element={
-          <cartContext.Provider value={{cartItems, setCartItems,wishList, setWishList, sortList}}>
+          <cartContext.Provider value={{cartItems, setCartItems,wishList, setWishList, sortList, showToast}}>
             <Cart />
           </cartContext.Provider>
         
         }/>
 
       </Routes>
+      
     </>
   );
 }

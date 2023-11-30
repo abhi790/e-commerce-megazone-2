@@ -3,17 +3,22 @@ import styles from './Card.module.css';
 import stylesB from './Button.module.css';
 import { Link } from 'react-router-dom';
 import { productContext } from '../context/productContext';
+
 const Card = ({product}) => {
-  const {cartItems, setCartItems,isProductPresent, showAddToCart, showGoToCart} = useContext(productContext);
+  const {cartItems, setCartItems,isProductPresent, showAddToCart, showGoToCart,showToast} = useContext(productContext);
   const handleAddToCart = (id) => {
-    setCartItems([...cartItems, product]);
+    setTimeout(()=>{
+      setCartItems([...cartItems, product]);
+      showToast(`✅ ${product.name} -- added successfully`,'green');
+    }, 200);
   }
+
 
   return (
     <div className={styles.card}>
       <img src={product.img_src} />
         <div className={styles.content}>
-          <span className={styles.card_name}>{product.id} - {product.name}</span>
+          <span className={styles.card_name}>{product.name}</span>
           <br />
           <span className={styles.card_s_des}>{product.short_desc}</span>
           <br />
@@ -27,8 +32,10 @@ const Card = ({product}) => {
           <Link to={`/details/${product.id}`}>
             <button className={styles.button}>View Item</button>
           </Link>
-          {isProductPresent(product) ? showGoToCart() : (<button className={`${stylesB.button}`} onClick={() => handleAddToCart(product.id)}>Add To Cart</button>)}
 
+        {
+            isProductPresent(product) ? showGoToCart() : <button className={`${stylesB.button}`} onClick={() => handleAddToCart(product.id)}>Add To Cart</button>
+        }
         </div>
     </div>
   )

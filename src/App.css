@@ -1,0 +1,38 @@
+
+.toastContainer {
+    position: sticky;
+    top: 30%;
+    right: 2%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1;
+    overflow: hidden;
+    padding: 20px;
+}
+
+
+.toast {
+    font-size: 1.5rem;
+    border: 2px solid #b9b9b9;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 20px 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    transition: all ease-in-out .2s;
+}
+.toast:hover {
+    transform:translateY(-4px);
+}
+
+.orangeBox {
+    color: orange;
+}
+.greenBox {
+    color: green;
+}
+.redBox {
+    color: red;
+}

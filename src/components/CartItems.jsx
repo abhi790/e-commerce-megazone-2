@@ -6,24 +6,34 @@ import { Link } from 'react-router-dom';
 import { cartContext } from '../context/productContext';
 
 const CartItems = ({item, cartItems, setCartItems}) => {
-const { wishList, setWishList} = useContext(cartContext);
+const { wishList, setWishList,showToast} = useContext(cartContext);
     const handleSaveForLater = () => {
         setWishList([...wishList, item]);
         const remainingItems = cartItems.filter(prod => prod.id !== item.id);
-        setCartItems(remainingItems);
-        alert(`Selected item saved for later`);
+        setTimeout(()=> {
+            setCartItems(remainingItems);
+            showToast(`${item.name} -- saved to wishlist`, 'orange');
+        }, 200);
     }
     
+
     const handleRemoveItem = () => {
         if(window.confirm(`Are you sure want to remove item from cart`)){
             const leftItems = cartItems.filter(prod => prod.id !== item.id);
-            setCartItems(leftItems);
+            setTimeout(() => {
+                setCartItems(leftItems);
+                showToast(`❌ ${item.name} -- removed from cart`, 'red')
+            }, 200);
         }
+
     }
     const handleBuyItem = () => {
         if(window.confirm(`Are you sure you want buy the item`)){
             const leftItems = cartItems.filter(prod => prod.id !== item.id);
-            setCartItems(leftItems);
+            setTimeout(() => {
+                setCartItems(leftItems);
+                showToast(`${item.name} --  purchased succesfully`,'green');
+            }, 200);
         }
     }
 
@@ -32,7 +42,7 @@ const { wishList, setWishList} = useContext(cartContext);
     <div className={stylesC.card}>
       <img src={item.img_src} />
         <div>
-          <span className={stylesC.card_name}>{item.id} - {item.name}</span>
+          <span className={stylesC.card_name}>{item.name}</span>
           <br />
           <span className={stylesC.card_s_des}>{item.short_desc}</span>
           <br />

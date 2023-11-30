@@ -25,7 +25,7 @@ const SaveLater = () => {
 
     const nothingFound = () => {
         return (
-            <span className={stylesC.nothing}>Empty Save for Later</span>
+            <span className={stylesC.nothing}>Empty WishList</span>
         )
     }
     return (
