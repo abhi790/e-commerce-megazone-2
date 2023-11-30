@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/e-commerce-megazone-2/static/css/main.ca4a84d7.css",
-    "main.js": "/e-commerce-megazone-2/static/js/main.3b8f4a19.js",
+    "main.css": "/e-commerce-megazone-2/static/css/main.7a19f05a.css",
+    "main.js": "/e-commerce-megazone-2/static/js/main.1cee1b63.js",
     "index.html": "/e-commerce-megazone-2/index.html",
-    "main.ca4a84d7.css.map": "/e-commerce-megazone-2/static/css/main.ca4a84d7.css.map",
-    "main.3b8f4a19.js.map": "/e-commerce-megazone-2/static/js/main.3b8f4a19.js.map"
+    "main.7a19f05a.css.map": "/e-commerce-megazone-2/static/css/main.7a19f05a.css.map",
+    "main.1cee1b63.js.map": "/e-commerce-megazone-2/static/js/main.1cee1b63.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca4a84d7.css",
-    "static/js/main.3b8f4a19.js"
+    "static/css/main.7a19f05a.css",
+    "static/js/main.1cee1b63.js"
   ]
 }
