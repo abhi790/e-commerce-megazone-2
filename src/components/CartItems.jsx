@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import styles from './CartItems.module.css';
 import stylesB from './Button.module.css';
 import stylesC from './Card.module.css';
-import { Link } from 'react-router-dom';
 import { cartContext } from '../context/productContext';
 
 const CartItems = ({item, cartItems, setCartItems}) => {
@@ -15,7 +14,7 @@ const { wishList, setWishList,showToast} = useContext(cartContext);
             showToast(`${item.name} -- saved to wishlist`, 'orange');
         }, 200);
     }
-    
+
 
     const handleRemoveItem = () => {
         if(window.confirm(`Are you sure want to remove item from cart`)){
